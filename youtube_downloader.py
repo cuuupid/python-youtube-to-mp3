@@ -3,7 +3,13 @@ from pytube import YouTube as Youtube_Video
 import re
 
 def download_youtube_video(video_url):
-    ''' Takes in a video URL to a youtube video, outputs the relative path to the downloaded video '''
+    '''
+    Signed woodworksio Aug 13, 2017
+
+    Takes in a video URL to a youtube video, outputs the relative path to the downloaded mp3 
+
+    Usage: download_youtube_video(video_url) --> returns mp3 filepath
+    '''
     vid = Youtube_Video(video_url)
     vid.set_filename(re.sub('[^a-zA-Z]','',vid.filename).lower())
     saved_to = vid.filename
