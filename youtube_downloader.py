@@ -25,6 +25,7 @@ def download_youtube_video(video_url):
     vid.download('static/')
     mp4 = 'static/'+saved_to+'.mp4'
     mp3 = 'static/'+saved_to+'.mp3'
+    # TODO open pipe on init to mass convert videos while keeping ffmpeg open
     cmd = "ffmpeg -i \"" + mp4 + "\" -vn -ar 44100 -ac 2 -ab 192k -f mp3 \"" + mp3 + "\""
     os.system(cmd)
     try:
